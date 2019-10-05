@@ -1,0 +1,41 @@
+﻿<Window
+    x:Class="WPF_ListView_INPC_Command.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:WPF_ListView_INPC_Command"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Window.DataContext>
+        <local:MainWindowModel />
+    </Window.DataContext>
+    <Grid>
+        <ListView
+            x:Name="listView"
+            Width="210"
+            Height="400"
+            Margin="10,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            ItemsSource="{Binding Books}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Title}" Header="Title" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Pages}" Header="Pages" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button
+            x:Name="button"
+            Width="75"
+            Margin="262,38,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Command="{Binding ChangeCommand}"
+            Content="Button" />
+
+    </Grid>
+</Window>

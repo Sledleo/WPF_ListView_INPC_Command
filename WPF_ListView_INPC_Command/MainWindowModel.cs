@@ -28,7 +28,6 @@ namespace WPF_ListView_INPC_Command
 
 
 
-
         private ICommand changeCommand;
 
         public ICommand ChangeCommand
